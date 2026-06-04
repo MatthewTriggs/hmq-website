@@ -20,7 +20,7 @@ const disciplines = [
       "IP-rated enclosures, panel boxes, brackets, chassis, cabinetry. Drawings go straight to our local fabricators. We know which lines run which processes.",
     image: "/images/disc-sheetmetal.jpg",
     imageAlt: "Sheet metal cabinetry reference",
-    lightBg: true,
+    lightBg: false,
   },
   {
     number: "03",
@@ -29,7 +29,7 @@ const disciplines = [
       "Control panels, MCC integrations, PCB and battery assemblies, field wiring looms, PLC-ready schematics. Built to industrial standards, ready for first-pass commissioning.",
     image: "/images/disc-electrical.jpg",
     imageAlt: "Electrical battery and PCB assembly reference",
-    lightBg: true,
+    lightBg: false,
   },
   {
     number: "04",
@@ -38,7 +38,7 @@ const disciplines = [
       "Pipe racks, access platforms, conveyor supports, load-bearing infrastructure. Calculated, stamped, ready to cut.",
     image: "/images/disc-structural.jpg",
     imageAlt: "Structural steel reference model",
-    lightBg: true,
+    lightBg: false,
   },
   {
     number: "05",
