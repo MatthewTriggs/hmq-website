@@ -94,13 +94,12 @@ export default function Contact() {
             <ContactPersonCard
               name="Tiaan Marais"
               role="Finance Director · Head of Analytics"
-              email="Tiaan@hmqgroup.co.za"
-              phone="+27 72 576 0885"
+              email="info@hmqgroup.co.za"
             />
             <ContactPersonCard
               name="Jacques"
               role="Engineering & Operations"
-              email="Jacques@hmqgroup.co.za"
+              email="info@hmqgroup.co.za"
               phone="+27 82 521 7100"
             />
 
@@ -244,7 +243,7 @@ function ContactPersonCard({
   name: string;
   role: string;
   email: string;
-  phone: string;
+  phone?: string;
 }) {
   return (
     <div className="border border-[#2A2A2A] p-6 hover:border-[#C8922A]/40 transition-colors duration-300 group">
@@ -270,13 +269,15 @@ function ContactPersonCard({
         >
           {email}
         </a>
-        <a
-          href={`tel:${phone.replace(/\s/g, "")}`}
-          className="text-sm text-[#9A9289] hover:text-[#C8922A] transition-colors"
-          style={{ fontFamily: "var(--font-jost)" }}
-        >
-          {phone}
-        </a>
+        {phone && (
+          <a
+            href={`tel:${phone.replace(/\s/g, "")}`}
+            className="text-sm text-[#9A9289] hover:text-[#C8922A] transition-colors"
+            style={{ fontFamily: "var(--font-jost)" }}
+          >
+            {phone}
+          </a>
+        )}
       </div>
     </div>
   );

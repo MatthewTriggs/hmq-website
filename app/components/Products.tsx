@@ -12,7 +12,6 @@ const products = [
     imageAlt: "Armour Glow LED 360 degree vehicle identification unit",
     features: ["360° viewing angle", "Magnet feet, 135 kg pull force", "Beacon light (optional)", "Battery backup (optional)"],
     specs: [
-      { label: "Environmental", value: "IP68" },
       { label: "Voltage", value: "12 / 24 V" },
       { label: "Op. Temp", value: "-20 to +65 °C" },
       { label: "Dimensions", value: "Varies" },
@@ -26,7 +25,6 @@ const products = [
     imageAlt: "HMQ Illuminated E-Stop safety assembly with interactive LED",
     features: ["180° viewing angle", "2mm mild steel housing", "Interactive LED indicator", "M6 bolt-through mounting"],
     specs: [
-      { label: "Environmental", value: "IP68" },
       { label: "Voltage", value: "12 / 24 V" },
       { label: "Dimensions", value: "154 × 160 × 125 mm" },
       { label: "Weight", value: "1.5 kg" },
@@ -41,7 +39,6 @@ const products = [
     imageAlt: "Armour Glow Single LED panel mounted to vehicle",
     features: ["100 – 200 m visibility", "Anti-vibration mounts", "Battery backup (optional)", "Modular design"],
     specs: [
-      { label: "Environmental", value: "IP68" },
       { label: "Voltage", value: "12 / 24 V" },
       { label: "Op. Temp", value: "-20 to +65 °C" },
       { label: "Dimensions", value: "Varies" },
@@ -54,9 +51,8 @@ const products = [
     image: "/images/oem-harness.jpg",
     imageAlt: "HMQ OEM replacement engineered cable harness with braided sleeve and sealed Deutsch connector",
     lightBg: true,
-    features: ["Flame-resistant braiding", "IP68 in mated state", "Build to spec, build to design", "Drawings included"],
+    features: ["Flame-resistant braiding", "Sealed in mated state", "Build to spec, build to design", "Drawings included"],
     specs: [
-      { label: "Environmental", value: "IP68 mated" },
       { label: "Voltage", value: "Varies" },
       { label: "Op. Temp", value: "-15 to +125 °C" },
       { label: "Dimensions", value: "Varies" },
@@ -132,9 +128,9 @@ function ProductCard({
           src={product.image}
           alt={product.imageAlt}
           fill
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          className="object-cover transition-all duration-700 group-hover:scale-105 brightness-75 group-hover:brightness-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-transparent to-transparent group-hover:opacity-50 transition-opacity duration-700" />
         <span
           className="absolute top-4 left-4 text-[10px] tracking-[0.2em] text-[#C8922A] bg-[#0D0D0D]/80 px-2 py-1 uppercase"
           style={{ fontFamily: "var(--font-dm-mono)" }}

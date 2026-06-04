@@ -72,11 +72,11 @@ export default function Capabilities() {
             </p>
           </div>
 
-          {/* Cable harness — Operating Principle visual */}
-          <div className="relative aspect-[4/3] bg-[#F5F5F0] border border-[#1E1E1E] overflow-hidden group">
+          {/* Dragline — Operating Principle visual */}
+          <div className="relative aspect-[4/3] bg-[#111111] border border-[#1E1E1E] overflow-hidden group">
             <Image
-              src="/images/cable-harness.jpg"
-              alt="HMQ engineered cable harness with sealed Deutsch connector"
+              src="/images/dragline.jpg"
+              alt="HMQ dragline excavator in active mining operation"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -90,15 +90,17 @@ export default function Capabilities() {
           <CapabilityCard
             number="01"
             slug="systems"
+            scrollHref="#products"
             title="Systems Hardware"
-            description="LED identification, safety control units, E-stop assemblies, sealed harness work and integrated field hardware. Built to IP68 where it matters, specced against the actual dust, vibration and temperature of the site it&rsquo;s going to."
-            cta="Discuss a system"
-            tags={["IP68 Rated", "LED Identification", "Safety Systems", "E-Stop Assemblies"]}
+            description="LED identification, safety control units, E-stop assemblies, sealed harness work and integrated field hardware. Specced against the actual dust, vibration and temperature of the site it&rsquo;s going to."
+            cta="See our products"
+            tags={["LED Identification", "Safety Systems", "E-Stop Assemblies", "Sealed Harness"]}
             delay={0}
           />
           <CapabilityCard
             number="02"
             slug="design"
+            scrollHref="#drawing-office"
             title="Full Engineering Stack"
             description="Mechanical, electrical, structural, sheet metal, architectural and engineering validation. All six disciplines sit in the same drawing office, on the same drawing set. No version drift, no handoff gaps, fabrication drawings that go straight to the shop floor."
             cta="See the drawing office"
@@ -108,6 +110,7 @@ export default function Capabilities() {
           <CapabilityCard
             number="03"
             slug="analytics"
+            scrollHref="#about"
             title="Mine Data, Worked Hard"
             description="Predictive maintenance, fleet overview, safety risk analysis, fuel and production insights. Live dashboards and alerting that sit alongside the hardware, so the numbers running past the control room actually mean something."
             cta="See the analytics stack"
@@ -125,11 +128,13 @@ function CapabilityCard({
   title,
   description,
   cta,
+  scrollHref,
   tags,
   delay,
 }: {
   number: string;
   slug: string;
+  scrollHref: string;
   title: string;
   description: string;
   cta: string;
@@ -137,6 +142,15 @@ function CapabilityCard({
   delay: number;
 }) {
   const ref = useScrollReveal(0.1);
+
+  const handleCta = () => {
+    const el = document.querySelector(scrollHref);
+    if (el) {
+      const top = (el as HTMLElement).offsetTop - 72;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
+  };
+
   return (
     <div
       ref={ref}
@@ -177,15 +191,16 @@ function CapabilityCard({
         ))}
       </div>
 
-      <span
-        className="text-[11px] tracking-[0.15em] text-[#C8922A] uppercase flex items-center gap-2 group-hover:gap-3 transition-all duration-200"
+      <button
+        onClick={handleCta}
+        className="text-[11px] tracking-[0.15em] text-[#C8922A] uppercase flex items-center gap-2 group-hover:gap-3 transition-all duration-200 cursor-pointer"
         style={{ fontFamily: "var(--font-dm-mono)" }}
       >
         {cta}
         <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
           <path d="M0 5h10M7 2l3 3-3 3" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
-      </span>
+      </button>
     </div>
   );
 }

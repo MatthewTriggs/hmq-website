@@ -6,7 +6,7 @@ import { useScrollReveal } from "../hooks/useScrollReveal";
 const stats = [
   { value: "0.2%", label: "Field failure rate", sub: "Across all deployed units" },
   { value: "10+", label: "Active mine sites", sub: "Namibia to Cape Town" },
-  { value: "<1h", label: "Enquiry response", sub: "Real engineer, same day" },
+  { value: "24h", label: "Enquiry response", sub: "Real engineer, same day" },
   { value: "100%", label: "Local manufacturing", sub: "Every unit built in Gauteng" },
 ];
 

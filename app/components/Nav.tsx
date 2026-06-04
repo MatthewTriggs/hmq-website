@@ -51,9 +51,9 @@ export default function Nav() {
           <Image
             src="/images/logo.png"
             alt="HMQ Group"
-            width={120}
-            height={48}
-            className="h-12 w-auto object-contain mix-blend-screen brightness-110"
+            width={160}
+            height={64}
+            className="h-16 w-auto object-contain mix-blend-screen brightness-150"
             priority
           />
         </a>
