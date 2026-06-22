@@ -7,7 +7,7 @@ export async function POST(request: Request) {
     await request.json();
 
   const { error } = await resend.emails.send({
-    from: "HMQ Website <onboarding@resend.dev>",
+    from: "HMQ Website <noreply@hmqgroup.co.za>",
     to: "info@hmqgroup.co.za",
     replyTo: email,
     subject: `New Enquiry — ${company || name}`,
