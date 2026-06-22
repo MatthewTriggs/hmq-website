@@ -92,13 +92,6 @@ export default function Contact() {
           {/* Contact cards */}
           <div ref={cardsRef} className="animate-fade-in flex flex-col gap-6">
             <ContactPersonCard
-              name="Tiaan Marais"
-              role="Finance Director · Head of Analytics"
-              email="info@hmqgroup.co.za"
-            />
-            <ContactPersonCard
-              name="Jacques"
-              role="Engineering & Operations"
               email="info@hmqgroup.co.za"
               phone="+27 82 521 7100"
             />
@@ -235,32 +228,14 @@ export default function Contact() {
 }
 
 function ContactPersonCard({
-  name,
-  role,
   email,
   phone,
 }: {
-  name: string;
-  role: string;
   email: string;
   phone?: string;
 }) {
   return (
     <div className="border border-[#2A2A2A] p-6 hover:border-[#C8922A]/40 transition-colors duration-300 group">
-      <div className="mb-4">
-        <h3
-          className="text-2xl font-light text-white group-hover:text-[#C8922A] transition-colors duration-300"
-          style={{ fontFamily: "var(--font-cormorant)" }}
-        >
-          {name}
-        </h3>
-        <span
-          className="text-[10px] tracking-[0.15em] text-[#4A4540] uppercase"
-          style={{ fontFamily: "var(--font-dm-mono)" }}
-        >
-          {role}
-        </span>
-      </div>
       <div className="flex flex-col gap-2">
         <a
           href={`mailto:${email}`}
