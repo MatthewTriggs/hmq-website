@@ -38,7 +38,7 @@ export default function Nav() {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+      <nav className="relative max-w-7xl mx-auto px-6 lg:px-12 h-28 flex items-center">
         {/* Logo */}
         <a
           href="#hero"
@@ -46,20 +46,20 @@ export default function Nav() {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
-          className="flex items-center group"
+          className="mx-auto lg:mx-0 flex items-center group"
         >
           <Image
             src="/images/logo.png"
             alt="HMQ Group"
-            width={200}
-            height={80}
-            className="h-20 w-auto object-contain mix-blend-screen brightness-150"
+            width={260}
+            height={104}
+            className="h-24 w-auto object-contain mix-blend-screen brightness-150"
             priority
           />
         </a>
 
         {/* Desktop links */}
-        <div className="hidden lg:flex items-center gap-6">
+        <div className="hidden lg:flex items-center gap-6 ml-auto">
           {links.map((link) => (
             <button
               key={link.href}
@@ -81,7 +81,7 @@ export default function Nav() {
 
         {/* Mobile hamburger */}
         <button
-          className="lg:hidden flex flex-col gap-1.5 p-2 cursor-pointer"
+          className="lg:hidden absolute right-6 flex flex-col gap-1.5 p-2 cursor-pointer"
           onClick={() => setMenuOpen((o) => !o)}
           aria-label="Toggle menu"
         >
